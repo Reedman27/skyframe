@@ -82,3 +82,5 @@ Desktop.ini
 
 # Private one-off review handoff (keep out of the public repository)
 /SKYFRAME-QUICK-REVIEW.md
+CLAUDE.md
+CLAUDE_PROMPT.md
