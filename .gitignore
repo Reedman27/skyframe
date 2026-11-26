@@ -1,0 +1,84 @@
+# Build directories and generated CMake/Ninja files
+build/
+build-*/
+cmake-build-*/
+CMakeUserPresets.json
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+
+# Compiled objects and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.pdb
+*.pch
+*.gch
+*.d
+*.tlog
+*.user
+
+# Test, coverage, and profiler output
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+coverage/
+htmlcov/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+*.swp
+*.swo
+*.orig
+
+# IDE/editor state (keep shared editor settings only when intentionally added)
+.idea/
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local app data and caches
+.cache/
+.cache-*/
+.ninja_deps
+.ninja_log
+
+# Keep project documentation, Claude guidance, source, tests, and GitHub metadata.
+# In particular, do NOT add README.md, LICENSE, CLAUDE.md, CLAUDE_PROMPT.md,
+# docs/, .github/, src/, or tests/ to this ignore file.
+
+# Private one-off review handoff (keep out of the public repository)
+/SKYFRAME-QUICK-REVIEW.md

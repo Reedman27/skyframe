@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+  <title id="title">Skyframe software architecture</title>
+  <desc id="desc">The raylib user interface and world renderer call into a renderer-independent C++ simulation core. The core contains aircraft, fleet, environment, terrain generation, fixed-step simulation and replay systems. Tests exercise the core without a graphics dependency.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1118"/><stop offset="1" stop-color="#172633"/></linearGradient>
+    <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#164d70"/><stop offset="1" stop-color="#102f48"/></linearGradient>
+    <linearGradient id="green" x2="1" y2="1"><stop stop-color="#254f48"/><stop offset="1" stop-color="#17342f"/></linearGradient>
+    <linearGradient id="amber" x2="1" y2="1"><stop stop-color="#69502b"/><stop offset="1" stop-color="#3f301d"/></linearGradient>
+    <style>
+      .h{font:700 34px system-ui,sans-serif;fill:#eef5fb}.sub{font:16px system-ui,sans-serif;fill:#a6bac9}.tag{font:700 13px system-ui,sans-serif;fill:#7bdcf5;letter-spacing:2px}.title{font:700 22px system-ui,sans-serif;fill:#f2f7fb}.body{font:16px system-ui,sans-serif;fill:#c5d2dc}.small{font:14px system-ui,sans-serif;fill:#91a6b6}.edge{stroke:#7bdcf5;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.thin{stroke:#486375;stroke-width:1.5;fill:none}
+    </style>
+  </defs>
+  <rect width="1440" height="760" rx="28" fill="url(#bg)"/>
+  <text x="68" y="82" class="tag">ENGINEERING OVERVIEW</text>
+  <text x="68" y="130" class="h">Skyframe architecture</text>
+  <text x="68" y="162" class="sub">A small native renderer over a deterministic, testable simulation core.</text>
+  <rect x="68" y="215" width="310" height="210" rx="18" fill="url(#blue)" stroke="#3c86ac" stroke-width="2"/>
+  <text x="96" y="260" class="tag">PRESENTATION</text><text x="96" y="300" class="title">raylib desktop</text>
+  <text x="96" y="340" class="body">World renderer</text><text x="96" y="370" class="body">HUD, input and camera</text><text x="96" y="400" class="small">src/skyframe/render + ui</text>
+  <path d="M378 320 H450" class="edge"/><path d="M438 308 L450 320 L438 332" class="edge"/>
+  <rect x="470" y="195" width="570" height="250" rx="18" fill="url(#green)" stroke="#4b9b83" stroke-width="2"/>
+  <text x="502" y="240" class="tag">SIMULATION CORE · NO RAYLIB DEPENDENCY</text><text x="502" y="280" class="title">C++20 fixed-step simulation</text>
+  <rect x="502" y="308" width="150" height="92" rx="10" fill="#102923" stroke="#548b79"/><text x="520" y="344" class="body">Aircraft</text><text x="520" y="372" class="small">Flight + faults</text>
+  <rect x="670" y="308" width="150" height="92" rx="10" fill="#102923" stroke="#548b79"/><text x="688" y="344" class="body">Environment</text><text x="688" y="372" class="small">Seeded terrain + weather</text>
+  <rect x="838" y="308" width="170" height="92" rx="10" fill="#102923" stroke="#548b79"/><text x="856" y="344" class="body">Replay system</text><text x="856" y="372" class="small">Buffer + disk archive</text>
+  <path d="M1040 320 H1112" class="edge"/><path d="M1100 308 L1112 320 L1100 332" class="edge"/>
+  <rect x="1130" y="215" width="242" height="210" rx="18" fill="url(#amber)" stroke="#bd9553" stroke-width="2"/>
+  <text x="1156" y="260" class="tag" style="fill:#f2c77d">VERIFICATION</text><text x="1156" y="300" class="title">Headless tests</text><text x="1156" y="340" class="body">Deterministic maps</text><text x="1156" y="370" class="body">Weather + replay I/O</text><text x="1156" y="400" class="small">tests/sim_tests.cpp</text>
+  <path d="M755 445 V515 H720" class="thin"/><path d="M720 515 V548" class="thin"/>
+  <rect x="470" y="555" width="570" height="130" rx="18" fill="#111d27" stroke="#476173" stroke-width="2"/>
+  <text x="502" y="600" class="tag">BUILD + DELIVERY</text><text x="502" y="640" class="title">CMake · GCC / Clang · sanitizers · GitHub Actions</text><text x="502" y="665" class="small">One C++ codebase; Windows port planned after the Linux sandbox is complete.</text>
+  <text x="68" y="714" class="small">All simulation state is renderer-independent and replayable. Generated worlds are deterministic from their seed.</text>
+</svg>

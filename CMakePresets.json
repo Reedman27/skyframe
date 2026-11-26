@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "core-release",
+      "displayName": "Skyframe core (Release, no graphics dependency)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/core-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SKYFRAME_BUILD_GAME": "OFF",
+        "SKYFRAME_BUILD_TESTS": "ON",
+        "SKYFRAME_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "desktop-release",
+      "displayName": "Skyframe desktop (Release)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/desktop-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SKYFRAME_BUILD_GAME": "ON",
+        "SKYFRAME_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "core-sanitize",
+      "displayName": "Skyframe core (ASan + UBSan)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/core-sanitize",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SKYFRAME_BUILD_GAME": "OFF",
+        "SKYFRAME_BUILD_TESTS": "ON",
+        "SKYFRAME_ENABLE_SANITIZERS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "core-release", "configurePreset": "core-release", "jobs": 2 },
+    { "name": "desktop-release", "configurePreset": "desktop-release", "jobs": 2 },
+    { "name": "core-sanitize", "configurePreset": "core-sanitize", "jobs": 2 }
+  ],
+  "testPresets": [
+    { "name": "core-release", "configurePreset": "core-release", "output": { "outputOnFailure": true } },
+    { "name": "core-sanitize", "configurePreset": "core-sanitize", "output": { "outputOnFailure": true } }
+  ]
+}
